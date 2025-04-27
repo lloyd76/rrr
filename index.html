@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapid Repair Recovery | Professional Vehicle Repair Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for smooth scrolling and animations */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .review-card {
+            transition: all 0.3s ease;
+        }
+        
+        .review-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1283&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav id="navbar" class="bg-white py-4 sticky-nav">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-tools text-blue-500 text-2xl mr-2"></i>
+                <a href="#" class="text-xl font-bold text-gray-800">Rapid Repair Recovery</a>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-gray-800 hover:text-blue-500 transition duration-300">Home</a>
+                <a href="#about" class="nav-link text-gray-800 hover:text-blue-500 transition duration-300">About</a>
+                <a href="#services" class="nav-link text-gray-800 hover:text-blue-500 transition duration-300">Services</a>
+                <a href="#reviews" class="nav-link text-gray-800 hover:text-blue-500 transition duration-300">Reviews</a>
+                <a href="#contact" class="nav-link text-gray-800 hover:text-blue-500 transition duration-300">Contact</a>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4">
+            <div class="flex flex-col space-y-3">
+                <a href="#home" class="nav-link text-gray-800 hover:text-blue-500 transition duration-300">Home</a>
+                <a href="#about" class="nav-link text-gray-800 hover:text-blue-500 transition duration-300">About</a>
+                <a href="#services" class="nav-link text-gray-800 hover:text-blue-500 transition duration-300">Services</a>
+                <a href="#reviews" class="nav-link text-gray-800 hover:text-blue-500 transition duration-300">Reviews</a>
+                <a href="#contact" class="nav-link text-gray-800 hover:text-blue-500 transition duration-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center animate-fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Professional Vehicle Repair Services</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Fast, reliable, and professional repair services for cars, vans, trucks, and trailers.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition duration-300">
+                    <i class="fas fa-phone-alt mr-2"></i> Contact Us
+                </a>
+                <a href="#services" class="bg-white hover:bg-gray-100 text-blue-600 px-8 py-3 rounded-lg font-semibold transition duration-300">
+                    <i class="fas fa-tools mr-2"></i> Our Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">What We Offer</h2>
+                <div class="w-20 h-1 bg-blue-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300 p-6">
+                    <div class="text-blue-500 mb-4">
+                        <i class="fas fa-truck-pickup text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Truck & Trailer Repair</h3>
+                    <p class="text-gray-600">Professional repair and maintenance services for all types of trucks and trailers to keep your business moving.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300 p-6">
+                    <div class="text-blue-500 mb-4">
+                        <i class="fas fa-car text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Car & Van Repair</h3>
+                    <p class="text-gray-600">Comprehensive repair services for cars and vans, from minor fixes to major overhauls.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300 p-6">
+                    <div class="text-blue-500 mb-4">
+                        <i class="fas fa-truck-moving text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Fleet Maintenance</h3>
+                    <p class="text-gray-600">Complete maintenance solutions for business fleets to minimize downtime and maximize efficiency.</p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300 p-6">
+                    <div class="text-blue-500 mb-4">
+                        <i class="fas fa-road text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Roadside Repair & Recovery</h3>
+                    <p class="text-gray-600">24/7 emergency roadside assistance and recovery services when you need it most.</p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300 p-6">
+                    <div class="text-blue-500 mb-4">
+                        <i class="fas fa-mobile-alt text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Mobile Mechanic Services</h3>
+                    <p class="text-gray-600">Our mechanics come to you for convenient, on-site repairs wherever you are.</p>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300 p-6">
+                    <div class="text-blue-500 mb-4">
+                        <i class="fas fa-clock text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">24/7 Call Out Service</h3>
+                    <p class="text-gray-600">Round-the-clock emergency services to get you back on the road quickly.</p>
+                </div>
+            </div>
+            
+            <!-- Additional Services List -->
+            <div class="mt-16 bg-blue-50 rounded-lg p-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6">Our Comprehensive Services Include:</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                        <span>Car, Van, Truck and Trailer servicing and maintenance</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                        <span>24hr call out service</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                        <span>Mobile mechanic services</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                        <span>Road side repair and recovery</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                        <span>Fleet maintenance</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                        <span>Batteries and electrical systems</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                        <span>Brakes and clutch repairs</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                        <span>Breakdown recovery</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                        <span>Car diagnostics</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                        <span>Engine tuning and conversion</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                        <span>Exhaust systems</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                        <span>Gearboxes and transmission</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                        <span>Oil changes and fluid services</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                        <span>Vehicle recovery services</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+                    <img src="https://images.unsplash.com/photo-1549318587-40a7b584b5e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" 
+                         alt="Mechanic working on a car" 
+                         class="rounded-lg shadow-lg w-full h-auto">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">About Rapid Repair Recovery</h2>
+                    <div class="w-20 h-1 bg-blue-500 mb-6"></div>
+                    <p class="text-gray-600 mb-6">
+                        The main aim is in the name - we aim to provide "RAPID" repair and maintenance services to customer vehicles such as cars, vans, trucks and trailers.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        With over 15 years in the motor trade, we understand the key values of customer service when it comes to your vehicle. We aim to combat the long waiting times and shortage of vehicle mechanics by starting our own mobile and fleet maintenance service to keep your business's wheels turning.
+                    </p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Our Mission</h3>
+                        <p class="text-gray-600">
+                            To provide fast, reliable, and professional vehicle repair services with exceptional customer service. We believe in getting you back on the road as quickly as possible without compromising on quality.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Customer Reviews</h2>
+                <div class="w-20 h-1 bg-blue-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Review 1 -->
+                <div class="review-card bg-gray-50 rounded-lg p-8 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 text-blue-600 rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Cole S.</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "Amazing experience! I understand that rapid is in the name but I didn't think they would be that quick. Outstanding work and customer service was second to none."
+                    </p>
+                    <div class="text-sm text-gray-500">22 Aug 2024</div>
+                </div>
+                
+                <!-- Review 2 -->
+                <div class="review-card bg-gray-50 rounded-lg p-8 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 text-blue-600 rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Allan C.</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "Great service! Had my last few repairs done by these guys. Every time I've had my car back in a few hours - clue is in the name! Would recommend to anyone."
+                    </p>
+                    <div class="text-sm text-gray-500">22 Aug 2024</div>
+                </div>
+            </div>
+            
+            <!-- More reviews can be added here -->
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold">
+                    <span>See more reviews</span>
+                    <i class="fas fa-chevron-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Contact Us</h2>
+                <div class="w-20 h-1 bg-blue-500 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Contact Info -->
+                <div class="lg:w-1/2 bg-white p-8 rounded-lg shadow-sm">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Get In Touch</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 rounded-full w-10 h-10 flex items-center justify-center mr-4">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Phone Numbers</h4>
+                                <p class="text-gray-600">
+                                    <a href="tel:07514912156" class="hover:text-blue-600">07514 912156</a><br>
+                                    Aiden Curran: <a href="tel:07388042935" class="hover:text-blue-600">07388042935</a><br>
+                                    David Davies: <a href="tel:07514912156" class="hover:text-blue-600">07514912156</a>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 rounded-full w-10 h-10 flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Email</h4>
+                                <p class="text-gray-600">
+                                    <a href="mailto:aidenrapidrepair@gmail.com" class="hover:text-blue-600">aidenrapidrepair@gmail.com</a><br>
+                                    <a href="mailto:davidrapidrepair@gmail.com" class="hover:text-blue-600">davidrapidrepair@gmail.com</a>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 rounded-full w-10 h-10 flex items-center justify-center mr-4">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Service Hours</h4>
+                                <p class="text-gray-600">
+                                    24/7 Emergency Services Available<br>
+                                    Standard Hours: Mon-Sun 8:00 AM - 8:00 PM
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-bold text-gray-800 mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Google Map -->
+                <div class="lg:w-1/2">
+                    <div class="h-full rounded-lg overflow-hidden shadow-sm">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.788423380073!2d-0.1277583235742133!3d51.5073221717399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604c38c8cd1d9%3A0xb78f2474b9a45aa9!2sBig%20Ben!5e0!3m2!1sen!2suk!4v1690834247179!5m2!1sen!2suk" 
+                            width="100%" 
+                            height="100%" 
+                            style="min-height: 400px; border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-tools text-blue-500 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">Rapid Repair Recovery</span>
+                    </div>
+                    <p class="text-gray-400 max-w-md">
+                        Professional, rapid vehicle repair and recovery services for cars, vans, trucks and trailers. Available 24/7 to keep you moving.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+                            <li><a href="#reviews" class="text-gray-400 hover:text-white transition duration-300">Reviews</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Services</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Truck & Trailer Repair</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Car & Van Repair</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Fleet Maintenance</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Roadside Assistance</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-phone-alt text-blue-500 mt-1 mr-2"></i>
+                                <a href="tel:07514912156" class="text-gray-400 hover:text-white transition duration-300">07514 912156</a>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-envelope text-blue-500 mt-1 mr-2"></i>
+                                <a href="mailto:aidenrapidrepair@gmail.com" class="text-gray-400 hover:text-white transition duration-300">aidenrapidrepair@gmail.com</a>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-clock text-blue-500 mt-1 mr-2"></i>
+                                <span class="text-gray-400">24/7 Service</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2023 Rapid Repair Recovery. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Sticky navbar on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('bg-white', 'shadow-md');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.remove('bg-white', 'shadow-md');
+            }
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
